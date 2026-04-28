@@ -111,7 +111,7 @@ watch(
   () => authStore.user,
   (user) => {
     if (user) {
-      router.push('/dashboard')
+      router.push(getRoleHomePath(user))
     }
   },
   { immediate: true },

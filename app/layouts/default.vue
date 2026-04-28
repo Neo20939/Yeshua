@@ -50,7 +50,7 @@
 
         <div class="header-right">
           <div class="user-profile">
-            <span>{{ authUser?.name }}</span>
+            <span>{{ authUser?.firstName }} {{ authUser?.lastName }}</span>
           </div>
         </div>
       </header>
@@ -66,7 +66,7 @@
 const { logout } = useAuth()
 const authStore = useAuthStore()
 
-const authUser = computed(() => authStore.user)
+const authUser = computed(() => authStore.userInfo)
 const sidebarOpen = ref(true)
 
 const toggleSidebar = () => {
@@ -268,5 +268,10 @@ const handleLogout = async () => {
     padding: 1.25rem;
   }
 }
-</style>
 
+</style>
+ <script setup lang="ts">
+// This triggers the /me call – the plugin interceptor does the rest.
+// No need to await – just fire and forget.
+useFetch('/api/auth/me');
+</script>

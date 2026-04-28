@@ -81,16 +81,12 @@ const password = ref('')
 const error = ref('')
 const isLoading = computed(() => authStore.isLoading)
 
-// Redirect if already authenticated
+// Redirect when user is fully loaded (userInfo populated)
 watch(
   () => authStore.user,
   (user) => {
-    if (user) {
-      const roles = user.roles?.length ? user.roles : [user.role]
-      if (roles.includes('admin')) router.push('/admin')
-      else if (roles.includes('teacher')) router.push('/teacher/dashboard')
-      else if (roles.includes('student')) router.push('/student/dashboard')
-      else router.push('/dashboard')
+    if (user && !isLoading.value) {
+      router.push(getRoleHomePath(user))
     }
   },
   { immediate: true },
@@ -106,9 +102,10 @@ const handleLogin = async () => {
 
   try {
     await login(email.value, password.value)
+    // Redirect is handled by the watch above
   }
   catch (err: any) {
-    error.value = err.data?.message || 'Login failed. Please check your credentials.'
+    error.value = err.data?.message || err.message || 'Login failed. Please check your credentials.'
   }
 }
 </script>
