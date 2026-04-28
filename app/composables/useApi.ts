@@ -5,7 +5,6 @@
 
 export const useApi = () => {
   const authStore = useAuthStore()
-  const sessionToken = useCookie<string | null>('auth.session_token')
 
   const request = async <T>(
     url: string,
@@ -15,8 +14,8 @@ export const useApi = () => {
       'Content-Type': 'application/json',
     }
 
-    if (sessionToken.value) {
-      headers['x-session-token'] = sessionToken.value
+    if (authStore.sessionToken) {
+      headers['x-session-token'] = authStore.sessionToken
     }
 
     try {
@@ -28,10 +27,14 @@ export const useApi = () => {
       return data
     }
     catch (error: any) {
+      // Auto-clear auth state on 401 Unauthorized
       if (error?.status === 401 || error?.response?.status === 401) {
         authStore.clearAuthState()
+        navigateTo('/login')
       }
-      console.error('API Error:', error)
+      else {
+        console.error('API Error:', error)
+      }
       throw error
     }
   }
@@ -45,14 +48,14 @@ export const useApi = () => {
   const put = <T>(url: string, data?: any, options?: Record<string, any>) =>
     request<T>(url, { ...options, method: 'PUT', body: data })
 
-  const delete_ = <T>(url: string, options?: Record<string, any>) =>
+  const del = <T>(url: string, options?: Record<string, any>) =>
     request<T>(url, { ...options, method: 'DELETE' })
 
   return {
     get,
     post,
     put,
-    delete: delete_,
+    delete: del,
     request,
   }
 }
