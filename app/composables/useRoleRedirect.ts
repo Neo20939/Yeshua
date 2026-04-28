@@ -11,6 +11,8 @@ export const getRoleHomePath = (user: User | null | undefined) => {
   const normalized = roles.map(r => r.toLowerCase())
 
   if (normalized.includes('admin')) return '/admin'
+  if (normalized.includes('technician')) return '/technician/dashboard'
+  if (normalized.includes('finance')) return '/finance'
   if (normalized.includes('teacher')) return '/teacher/dashboard'
   if (normalized.includes('student')) return '/student/dashboard'
   return '/dashboard'

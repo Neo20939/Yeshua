@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="app-layout">
     <div class="overlay" :class="{ open: sidebarOpen }" @click="sidebarOpen = false" />
 
@@ -84,6 +84,9 @@ const handleLogout = async () => {
   await logout()
   await navigateTo('/login')
 }
+
+// Trigger the /me call; interceptor handles auth side effects.
+useFetch('/api/auth/me')
 </script>
 
 <style scoped>
@@ -270,8 +273,4 @@ const handleLogout = async () => {
 }
 
 </style>
- <script setup lang="ts">
-// This triggers the /me call – the plugin interceptor does the rest.
-// No need to await – just fire and forget.
-useFetch('/api/auth/me');
-</script>
+

@@ -97,7 +97,6 @@ definePageMeta({
 })
 
 const authStore = useAuthStore()
-const router = useRouter()
 
 const name = ref('')
 const email = ref('')
@@ -111,7 +110,7 @@ watch(
   () => authStore.user,
   (user) => {
     if (user) {
-      router.push(getRoleHomePath(user))
+      navigateTo(getRoleHomePath(user))
     }
   },
   { immediate: true },

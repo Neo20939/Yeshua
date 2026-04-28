@@ -74,23 +74,11 @@ definePageMeta({
 
 const { login } = useAuth()
 const authStore = useAuthStore()
-const router = useRouter()
 
 const email = ref('')
 const password = ref('')
 const error = ref('')
 const isLoading = computed(() => authStore.isLoading)
-
-// Redirect when user is fully loaded (userInfo populated)
-watch(
-  () => authStore.user,
-  (user) => {
-    if (user && !isLoading.value) {
-      router.push(getRoleHomePath(user))
-    }
-  },
-  { immediate: true },
-)
 
 const handleLogin = async () => {
   error.value = ''
@@ -102,7 +90,8 @@ const handleLogin = async () => {
 
   try {
     await login(email.value, password.value)
-    // Redirect is handled by the watch above
+    // navigateTo is faster/synchronous-style redirect, no login URL flash
+    await navigateTo(getRoleHomePath(authStore.user))
   }
   catch (err: any) {
     error.value = err.data?.message || err.message || 'Login failed. Please check your credentials.'
