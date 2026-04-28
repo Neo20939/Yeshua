@@ -1,0 +1,32 @@
+{
+  "name": "yhs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@i2d/nuxt-pdf-frame": "0.6.1",
+    "@iconify-json/lucide": "^1.2.104",
+    "@iconify-json/simple-icons": "^1.2.80",
+    "@nuxt/a11y": "1.0.0-alpha.1",
+    "@nuxt/image": "2.0.0",
+    "@nuxt/ui": "^4.7.0",
+    "@pinia/nuxt": "^0.11.3",
+    "nuxt": "^4.4.2",
+    "pinia": "^3.0.4",
+    "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.15.2",
+    "eslint": "^10.2.1",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.2.7"
+  },
+  "packageManager": "pnpm@10.33.2"
+}

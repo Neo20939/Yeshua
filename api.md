@@ -1,0 +1,160 @@
+﻿# API Endpoints
+
+- **API:** YEMS API
+- **Version:** 1.0.0
+- **Source:** http://192.168.1.26/shdhfh%40s/api/docs/json
+
+## Endpoints
+
+- `GET /` - getIndex
+- `GET /api/` - getApi
+- `GET /api/academic/academic-years/` - List academic years
+- `POST /api/academic/academic-years/` - Create academic year
+- `DELETE /api/academic/academic-years/{id}` - Delete academic year
+- `GET /api/academic/academic-years/{id}` - Get academic year
+- `PATCH /api/academic/academic-years/{id}` - Update academic year
+- `GET /api/academic/academic-years/{id}/current-term` - Get current term
+- `POST /api/academic/academic-years/{id}/set-current` - Set current academic year
+- `GET /api/academic/academic-years/{id}/terms` - Get terms for academic year
+- `GET /api/academic/academic-years/current` - Get current academic year
+- `GET /api/academic/classes/` - List classes
+- `POST /api/academic/classes/` - Create class
+- `DELETE /api/academic/classes/{id}` - Delete class
+- `GET /api/academic/classes/{id}` - Get class
+- `PATCH /api/academic/classes/{id}` - Update class
+- `GET /api/academic/classes/{id}/academic-summary` - Get class academic summary
+- `GET /api/academic/classes/{id}/details` - Get class details
+- `GET /api/academic/classes/{id}/enrollments` - Get class enrollments
+- `GET /api/academic/classes/{id}/history` - Get class history
+- `GET /api/academic/classes/{id}/students` - Get class students
+- `GET /api/academic/classes/{id}/students/{studentId}/academic` - Get student academic in class
+- `GET /api/academic/classes/{id}/students/academic` - Get class students academic
+- `GET /api/academic/classes/{id}/subjects` - Get class subjects
+- `GET /api/academic/classes/{id}/timetable` - Get class timetable
+- `GET /api/academic/class-levels/` - List class levels
+- `GET /api/academic/class-teacher-assignments/` - List class teacher assignments
+- `POST /api/academic/class-teacher-assignments/` - Create class teacher assignment
+- `DELETE /api/academic/class-teacher-assignments/{id}` - Delete class teacher assignment
+- `GET /api/academic/class-teacher-assignments/{id}` - Get class teacher assignment
+- `GET /api/academic/departments/` - List departments
+- `GET /api/academic/subjects/` - List subjects
+- `POST /api/academic/subjects/` - Create subject
+- `DELETE /api/academic/subjects/{id}` - Delete subject
+- `GET /api/academic/subjects/{id}` - Get subject
+- `PATCH /api/academic/subjects/{id}` - Update subject
+- `GET /api/academic/teacher-subject-assignments/` - List teacher subject assignments
+- `POST /api/academic/teacher-subject-assignments/` - Create teacher subject assignment
+- `DELETE /api/academic/teacher-subject-assignments/{id}` - Delete teacher subject assignment
+- `GET /api/academic/teacher-subject-assignments/{id}` - Get teacher subject assignment
+- `GET /api/academic/terms/` - List terms
+- `POST /api/academic/terms/` - Create term
+- `DELETE /api/academic/terms/{id}` - Delete term
+- `GET /api/academic/terms/{id}` - Get term
+- `PATCH /api/academic/terms/{id}` - Update term
+- `POST /api/academic/terms/{id}/set-current` - Set current term
+- `GET /api/admin/stats` - Get admin statistics
+- `GET /api/announcements/` - List announcements
+- `POST /api/announcements/` - Create announcement
+- `DELETE /api/announcements/{id}` - Delete announcement
+- `PATCH /api/announcements/{id}` - Update announcement
+- `GET /api/announcements/banner` - Get active banner announcements
+- `GET /api/assignments/` - List assignments
+- `POST /api/assignments/` - Create assignment
+- `DELETE /api/assignments/{id}` - Delete assignment
+- `GET /api/assignments/{id}` - Get assignment
+- `PATCH /api/assignments/{id}` - Update assignment
+- `PATCH /api/assignments/{id}/publish` - Publish assignment
+- `GET /api/assignments/{id}/submissions` - List submissions
+- `POST /api/assignments/{id}/submit` - Submit assignment
+- `PATCH /api/assignments/{id}/unpublish` - Unpublish assignment
+- `PATCH /api/assignments/submissions/{submissionId}/grade` - Grade submission
+- `GET /api/attendance/classes/{classId}/sessions` - List class attendance sessions
+- `GET /api/attendance/me` - My attendance
+- `POST /api/attendance/sessions` - Create attendance session
+- `GET /api/attendance/sessions/{id}` - Get attendance session
+- `POST /api/attendance/sessions/{id}/records` - Record attendance
+- `GET /api/audit/` - List audit logs
+- `GET /api/audit/export` - Export audit logs as CSV
+- `POST /api/auth/login` - Login
+- `POST /api/auth/logout` - Logout
+- `GET /api/auth/me` - Get current user
+- `POST /api/auth/reset-password` - Reset password
+- `GET /api/exams/` - List exams
+- `POST /api/exams/` - Create exam
+- `DELETE /api/exams/{id}` - Delete exam
+- `GET /api/exams/{id}` - Get exam
+- `PATCH /api/exams/{id}` - Update exam
+- `PATCH /api/exams/{id}/publish` - Publish exam
+- `PATCH /api/exams/{id}/unpublish` - Unpublish exam
+- `GET /api/exams/by-exam/{examId}/submissions` - Exam submissions
+- `GET /api/exams/published` - List published exams
+- `GET /api/exams/published/{id}` - Get published exam
+- `POST /api/exams/submissions` - Create submission
+- `DELETE /api/exams/submissions/{id}` - Delete submission
+- `GET /api/exams/submissions/{id}` - Get submission
+- `PATCH /api/exams/submissions/{id}` - Update answers
+- `POST /api/exams/submissions/{id}/submit` - Submit exam
+- `GET /api/exams/submissions/me` - My submissions
+- `GET /api/finance/fee-records` - List fee records
+- `POST /api/finance/fee-records` - Create fee record
+- `GET /api/finance/fee-records/{id}` - Get fee record
+- `PATCH /api/finance/fee-records/{id}` - Update fee record
+- `GET /api/finance/fee-records/{id}/payments` - Get payment history
+- `POST /api/finance/fee-records/bulk` - Bulk generate fee records
+- `POST /api/finance/payments` - Record payment
+- `POST /api/finance/payments/{id}/reverse` - Reverse payment
+- `GET /api/finance/stats/term/{termId}` - Get term financial stats
+- `GET /api/finance/students/{studentId}/fee-status` - Get student fee status
+- `GET /api/health/` - Health check
+- `GET /api/health/cache` - Cache health
+- `PATCH /api/note-archive-flags/{id}/revoke` - Revoke archive flag
+- `GET /api/notes/` - List notes
+- `POST /api/notes/` - Upload a new note
+- `DELETE /api/notes/{id}` - Delete note
+- `GET /api/notes/{id}` - Get note by ID
+- `PATCH /api/notes/{id}` - Update note metadata
+- `GET /api/notes/{id}/file` - Download note file
+- `PATCH /api/notes/{id}/publish` - Publish note
+- `PATCH /api/notes/{id}/unpublish` - Unpublish note
+- `GET /api/notes/archived` - Get archived notes
+- `GET /api/questions/` - List questions
+- `POST /api/questions/` - Create question
+- `DELETE /api/questions/{id}` - Delete question
+- `GET /api/questions/{id}` - Get question
+- `PATCH /api/questions/{id}` - Update question
+- `POST /api/questions/{id}/options` - Add MCQ option
+- `DELETE /api/questions/options/{optionId}` - Delete MCQ option
+- `PATCH /api/questions/options/{optionId}` - Update MCQ option
+- `GET /api/schedules/me` - My schedule
+- `GET /api/services/health` - Get all services health
+- `GET /api/services/health/{service}` - Get service health
+- `POST /api/services/restart/{service}` - Restart service
+- `DELETE /api/storage/profile-picture` - Delete profile picture
+- `POST /api/storage/profile-picture` - Upload profile picture
+- `GET /api/students/` - List students
+- `POST /api/students/` - Create student
+- `GET /api/students/{id}` - Get student
+- `POST /api/students/{id}/enroll` - Enroll student
+- `GET /api/students/{id}/history` - Get student history
+- `POST /api/students/{id}/transfer` - Transfer student
+- `POST /api/students/promote` - Bulk promote students
+- `GET /api/test/` - Test UI
+- `GET /api/users/` - List users
+- `POST /api/users/` - Create user
+- `DELETE /api/users/{id}` - Delete user
+- `GET /api/users/{id}` - Get user by ID
+- `PATCH /api/users/{id}` - Update user
+- `POST /api/users/{id}/reset-password` - Issue password reset token
+- `POST /api/users/{id}/roles` - Assign roles
+- `GET /metrics/` - Get Prometheus metrics
+- `GET /status/` - Status page
+- `GET /status/api` - Status API
+- `GET /status/api/components` - Component status
+- `GET /status/api/incidents` - Active incidents
+- `POST /status/api/incidents` - Create incident
+- `POST /status/api/incidents/{id}/resolve` - Resolve incident
+- `POST /status/api/incidents/{id}/update` - Add incident update
+- `POST /status/api/observer/gatus` - Receive external observer events
+- `GET /status/api/uptime` - Uptime history
+- `GET /status/events` - getStatusEvents
+

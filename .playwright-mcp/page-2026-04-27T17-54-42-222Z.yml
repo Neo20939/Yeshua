@@ -1,0 +1,39 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic:
+        - link:
+          - /url: /
+      - generic [ref=e5]:
+        - button "Switch to dark mode" [ref=e6]
+        - link "GitHub" [ref=e8] [cursor=pointer]:
+          - /url: https://github.com/nuxt-ui-templates/starter
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - generic [ref=e14]:
+        - heading "YEMS Login" [level=1] [ref=e15]
+        - paragraph [ref=e16]: Education Management System
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - generic [ref=e23]: Email Address
+            - textbox "Email Address" [ref=e26]:
+              - /placeholder: Enter your email
+          - generic [ref=e29]:
+            - generic [ref=e32]: Password
+            - textbox "Password" [ref=e35]:
+              - /placeholder: Enter your password
+        - button "Login" [ref=e38]
+      - generic [ref=e40]:
+        - paragraph [ref=e41]: "Demo Credentials:"
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: "Admin: admin@example.com"
+          - paragraph [ref=e44]: "Teacher: teacher@example.com"
+          - paragraph [ref=e45]: "Student: student@example.com"
+          - paragraph [ref=e46]: "Password: password123"
+  - separator [ref=e47]
+  - contentinfo [ref=e52]:
+    - generic [ref=e53]:
+      - link "GitHub" [ref=e55] [cursor=pointer]:
+        - /url: https://github.com/nuxt-ui-templates/starter
+      - paragraph [ref=e58]: Built with Nuxt UI • © 2026
